@@ -1,10 +1,77 @@
+@import './variables.scss';
+
+
 body {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   margin: 0;
-  padding: 20px;
+  // padding: 20px;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #687979;
+  color: white;
+}
+.header{
+background-image: url(https://neatplaces.co.nz/media/thumbs/uploads/stories/feature/recline_and_unwind_new_zealands_best_independent_cinema_experiences/Empty_cinema_seats.jpg.665x444_q80_crop-smart_upscale.jpg);
+
+background-position: center;
+background-repeat: no-repeat;
+position: relative;
+background-size: cover;
+padding: 30px 50px 0px 50px;
 }
 
+h1{
+  font-size: 48px;
+  text-align: center;
+}
+
+h1:hover{
+  color: #038C3E;
+}
+
+h3 {
+  text-align: center;
+}
+
+
+.containter {
+  display: flex;
+  flex-direction: row;
+  // flex-flow: row wrap;
+  // justify-content: center;
+  // align-items: center;
+  
+}
+
+.movies {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  background-color: #02735E;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.movies:hover{
+  background-color: #008F8C;
+}
+
+img { 
+  height: 400px;
+}
+
+.nav{
+  text-align: center;
+  color:white;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+ color: #0CF25D;
+}
 

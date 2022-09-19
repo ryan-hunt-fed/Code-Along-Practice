@@ -4,7 +4,7 @@ function AddMovie() {
   return (
     <>
     
-        <h1>Add Movie</h1>
+        <h3>Add Movie</h3>
    
     </>
   )
