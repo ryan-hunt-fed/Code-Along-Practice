@@ -1,4 +1,4 @@
-import {SAVE_MOVIES, DEL_MOVIE, UPDATE_MOVIE, ADD_MOVIE}from '../actions/actions'
+import {SAVE_MOVIES, DEL_MOVIE, UPDATE_MOVIE, SAVE_ONE_MOVIE}from '../actions/actions'
 
 
 
@@ -9,6 +9,9 @@ const {type, payload} = action
 switch(type) {
     case SAVE_MOVIES:
       return payload
+      case SAVE_ONE_MOVIE:
+        return [payload, ...state]
+
 
     default:
         return state

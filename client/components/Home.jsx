@@ -8,17 +8,19 @@ function Home() {
   return (
     <>
       <h3>Home</h3>
+      <div className='containter' >
       {movies.map((movie, idx) => {
         return (
-          <div className='containter' key={idx}>
-            <div className='movies' >
+            <div className='box' key={idx}>
+            <div className='movies'  >
               <p><strong>{movie.title}</strong></p>
               <img src={movie.img} />
             </div>
-          </div>
+            </div>
+          
         )
       })}
-
+    </div>
     </>
   )
 }

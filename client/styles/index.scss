@@ -1,4 +1,8 @@
 @import './variables.scss';
+@keyframes example {
+  0%   {background-color:white;}
+  100% {background-color:rgb(168, 143, 190);}
+}
 
 
 body {
@@ -8,12 +12,11 @@ body {
   margin: 0;
   // padding: 20px;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #687979;
+  background-color: #8fa7a7;
   color: white;
 }
 .header{
 background-image: url(https://neatplaces.co.nz/media/thumbs/uploads/stories/feature/recline_and_unwind_new_zealands_best_independent_cinema_experiences/Empty_cinema_seats.jpg.665x444_q80_crop-smart_upscale.jpg);
-
 background-position: center;
 background-repeat: no-repeat;
 position: relative;
@@ -24,10 +27,13 @@ padding: 30px 50px 0px 50px;
 h1{
   font-size: 48px;
   text-align: center;
+  animation-name: test;
+  animation-duration: 4s;
+
 }
 
 h1:hover{
-  color: #038C3E;
+  // color: #038C3E;
 }
 
 h3 {
@@ -37,25 +43,28 @@ h3 {
 
 .containter {
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
+  flex-wrap: wrap;
   // flex-flow: row wrap;
-  // justify-content: center;
-  // align-items: center;
+  justify-content: center;
+  align-items: center;
   
 }
 
 .movies {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  background-color: #02735E;
-  padding: 20px;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #596a67;
+  padding: 10px;
+  border-radius: 2px;
+  margin: 5px;
+  outline: 2px solid grey;
 }
 
 .movies:hover{
-  background-color: #008F8C;
+  background-color: #a5a5ad;
 }
 
 img { 
@@ -63,15 +72,46 @@ img {
 }
 
 .nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color:white;
+  
 }
 
-a {
-  color: white;
+.nav a{
+  margin: 0px 10px 10px 10px;
+  padding: 5px;
+  color: #687979;
+  text-decoration: none;
+  background-color: #ebdef6;
+  border-radius: 2px;
 }
 
 a:hover {
- color: #0CF25D;
+ color: #c33d73;
 }
+
+.add-form{
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+.add-form label{
+  display: flex;
+  margin-right: 10px;
+  justify-content: center;
+  align-content: center;
+}
+
+button{
+  background-color: #ebdef6;
+  border-radius: 4px;
+  margin: 10px;
+  border: none;
+  color: #687979;
+}
+
 

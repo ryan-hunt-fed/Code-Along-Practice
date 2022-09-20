@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
 
 import Home from './Home'
 import MovieDetails from './MovieDetails'
@@ -12,6 +12,13 @@ import { fetchMovies } from '../actions/actions'
 
 function App() {
   const dispatch = useDispatch()
+  const location = useLocation()
+  // console.log('location', location)
+
+  const isHome = location.pathname === '/'
+  
+
+  //TODO only trigger on load useEffect
   dispatch(fetchMovies())
   // getMoviesApi()
   return (
@@ -19,7 +26,9 @@ function App() {
       <header className="header">
         <h1>Movie Code Along</h1>
         <div className='nav'>
-        <Link to='/add'>Add Movie</Link>
+          {isHome ? <Link to='/add'>Add Movie</Link> : <Link to='/'>Home</Link>}
+          {/* {location.pathname !== '/' && <Link to='/'>Home</Link>} */}
+          {/* {location.pathname !== '/add' && <Link to='/add'>Home</Link>} */}
         </div>
         
       </header>

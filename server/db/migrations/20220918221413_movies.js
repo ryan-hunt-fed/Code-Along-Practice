@@ -8,7 +8,7 @@ exports.up = function(knex) {
     table.string('title')
     table.string('img')
     table.string('imdb_id')
-    table.boolean('watched')
+    table.boolean('watched').defaultTo(false)
     })
 };
 
