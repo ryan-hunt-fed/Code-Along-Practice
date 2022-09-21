@@ -1,20 +1,23 @@
 // imports
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector  } from 'react-redux'
 //files from project
 import { searchForMovie } from '../apis/imdb'
 import { addAMovie } from '../actions/actions'
 
 
+
 function AddMovie() {
   const dispatch = useDispatch()
+
+  const alreadyAddedIds = useSelector((store) =>store.movieReducer.map(movie => movie.imdb_id))
+  // console.log('testing button', alreadyAddedIds)
+
   const [movieSearch,setMovieSearch] = useState('')
   const [results,setResults] = useState([])
   
   const handleSearch = async (evt) => {
     evt.preventDefault()
-    // dispatch()
-    // console.log('submit', movieSearch)
     const movieSuggestions = await searchForMovie(movieSearch)
     setResults(movieSuggestions)
     setMovieSearch('')
@@ -25,7 +28,6 @@ function AddMovie() {
   }
 
   const handleAdd = (movie) => {
-    // console.log('Adding', movie)
     dispatch(addAMovie(movie))
   }
   
@@ -46,7 +48,7 @@ function AddMovie() {
           <div className='movies' >
             <p >{movie.title}</p>
            <img src={movie.image} />
-           <button onClick={() => handleAdd(movie)}>Save</button>
+           <button onClick={() => handleAdd(movie)} disabled={alreadyAddedIds.includes(movie.id)}>Save</button>
           </div>
           </div>
         ) 

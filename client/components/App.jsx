@@ -24,7 +24,8 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1>Movie Code Along</h1>
+        <h1>Watch Along</h1>
+        <h4><em>Movie catalog of movies to watch or rewatch</em></h4>
         <div className='nav'>
           {isHome ? <Link to='/add'>Add Movie</Link> : <Link to='/'>Home</Link>}
           {/* {location.pathname !== '/' && <Link to='/'>Home</Link>} */}
